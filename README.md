@@ -57,9 +57,15 @@ This project is a **Publication Search System** that scrapes research publicatio
 
 ### **1️⃣ Setup Elasticsearch**
 
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/your-repo/publication-search.git
+   cd vertical-search-engine
+   ```
+
 1. Install Elasticsearch:
    ```bash
-   ddocker-compose up -d
+   docker-compose up -d
    ```
 2. Verify Elasticsearch is running:
    ```bash
@@ -68,44 +74,35 @@ This project is a **Publication Search System** that scrapes research publicatio
 
 ### **2️⃣ Setup Scrapy Spider**
 
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/your-repo/publication-search.git
-   cd publication-search/scraper
-   ```
-2. Install dependencies:
+1. Install dependencies using pipenv:
    ```bash
    pipenv install
    ```
-3. Go inside the pipenv environment:
+2. Go inside the pipenv environment:
    ```bash
    pipenv shell
    ```
-4. Run Scrapy to collect data:
+3. Run Scrapy to collect data:
    ```bash
    scrapy crawl cu_spider
    ```
 
 ### **3️⃣ Setup Backend API**
 
-1. Install dependencies:
-   ```bash
-   pip install fastapi elasticsearch uvicorn
-   ```
-2. Start the flask server:
+1. Start the flask server:
    ```bash
    python app.py
    ```
-3. Test the API:
+2. Test the API:
    ```bash
-   curl -X POST "http://localhost:8000/"
+   curl -X POST "http://localhost:5000/"
    ```
 
 ### **4️⃣ Setup React Frontend**
 
 1. Navigate to the frontend directory:
    ```bash
-   cd ../frontend
+   cd frontend
    ```
 2. Install dependencies:
    ```bash
